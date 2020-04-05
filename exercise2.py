@@ -7,14 +7,10 @@ class Warehouse():   #Clase creada almacen para resolver el problema planteado
     def add(self,packets,price): #método agregar o compra, en el cual se agregan a los queues los valores que se ingresarán por consola
         for i in range(packets):
             self.qPackets.put(1)
-            for i in range(price):
-                self.qMoney.put(1)
 
     def sub(self,packets,price):  #método sustraer o vender, en el que se eliminan de los queues los valores que se ingresan por consola
         for i in range(packets):
             self.qPackets.get(1)
-            for i in range(price):
-                self.qMoney.get(1)
 
     def totalData(self): #método de información que mostrará por pantalla el contenido final de los queues
         print("The total packets is: ",self.qPackets.qsize())
